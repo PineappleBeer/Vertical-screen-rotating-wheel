@@ -1,0 +1,62 @@
+html,body,.container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.container {
+  position: relative;
+  perspective: 500px;  /* 视距，越大轮子越垂直屏幕 */
+}
+.parent{
+  position: absolute;   /* 以下为居中，无关 */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  margin:auto;
+  transform-style: preserve-3d;  /* 声明使用3D视图 */
+  transition: all 2s ease-in-out;   /* 动画时间及运动曲线 */
+}
+
+.child{
+  position: absolute;   /* 必须使所有div中心位置相同，所以使用浮动 */
+  top: 190px;   /* 这个值是计算出来的，首先child的父元素高500，所以一半是250，child本身高120，所以这个值是250-120/2=190，要让父元素的中心与child的中心重合，因为是父元素在旋转 */
+  width:300px;
+  height: 120px;
+  font-size: 100px;   /* 以下为字体，无关 */
+  color:white;
+  text-align: center;
+  line-height: 120px;
+}
+
+.child:nth-child(1) {
+  background:skyblue;
+  transform: rotateX(0deg) translateZ(300px);  /* child旋转多少度，离中心多远的距离 */
+}
+
+.child:nth-child(2) {
+  background:orange;
+  transform: rotateX(60deg) translateZ(300px);
+}
+
+.child:nth-child(3) {
+  background:greenyellow;
+  transform: rotateX(120deg) translateZ(300px);
+}
+
+.child:nth-child(4) {
+  background:rebeccapurple;
+  transform: rotateX(180deg) translateZ(300px);
+}
+
+.child:nth-child(5) {
+  background:seashell;
+  transform: rotateX(240deg) translateZ(300px);
+}
+
+.child:nth-child(6) {
+  background:rgb(202, 1, 252);
+  transform: rotateX(300deg) translateZ(300px);
+} 
